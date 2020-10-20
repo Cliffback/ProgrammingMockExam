@@ -20,14 +20,14 @@ struct Player
 	int columns = 0;
 };
 
-Player PlayerOne;
+Player LoginPlayer;
 
 void startOver()
 {
 	attemptsLeft--;
-	board[PlayerOne.rows][PlayerOne.columns] = ' ';
-	PlayerOne.rows = 0;
-	PlayerOne.columns = 0;
+	board[LoginPlayer.rows][LoginPlayer.columns] = ' ';
+	LoginPlayer.rows = 0;
+	LoginPlayer.columns = 0;
 	board[0][0] = '*';
 	correctMoves = 0;
 
@@ -71,7 +71,7 @@ void printBoard()
 void move()
 {
 
-	board[PlayerOne.rows][PlayerOne.columns] = '*';
+	board[LoginPlayer.rows][LoginPlayer.columns] = '*';
 
 		char movementInput = _getch();
 
@@ -79,47 +79,47 @@ void move()
 		{
 		case 'w':
 
-			board[PlayerOne.rows][PlayerOne.columns] = ' ';
-			PlayerOne.rows--;
-			if (PlayerOne.rows == -1)
+			board[LoginPlayer.rows][LoginPlayer.columns] = ' ';
+			LoginPlayer.rows--;
+			if (LoginPlayer.rows == -1)
 			{
-				PlayerOne.rows = 2;
+				LoginPlayer.rows = 2;
 			}
-			board[PlayerOne.rows][PlayerOne.columns] = '*';
+			board[LoginPlayer.rows][LoginPlayer.columns] = '*';
 
 
 			break;
 
 		case 'a':
-			board[PlayerOne.rows][PlayerOne.columns] = ' ';
-			PlayerOne.columns--;
-			if (PlayerOne.columns == -1)
+			board[LoginPlayer.rows][LoginPlayer.columns] = ' ';
+			LoginPlayer.columns--;
+			if (LoginPlayer.columns == -1)
 			{
-				PlayerOne.columns = 2;
+				LoginPlayer.columns = 2;
 			}
-			board[PlayerOne.rows][PlayerOne.columns] = '*';
+			board[LoginPlayer.rows][LoginPlayer.columns] = '*';
 
 			break;
 
 		case 's':
-			board[PlayerOne.rows][PlayerOne.columns] = ' ';
-			PlayerOne.rows++;
-			if (PlayerOne.rows == 3)
+			board[LoginPlayer.rows][LoginPlayer.columns] = ' ';
+			LoginPlayer.rows++;
+			if (LoginPlayer.rows == 3)
 			{
-				PlayerOne.rows = 0;
+				LoginPlayer.rows = 0;
 			}
-			board[PlayerOne.rows][PlayerOne.columns] = '*';
+			board[LoginPlayer.rows][LoginPlayer.columns] = '*';
 
 			break;
 
 		case 'd':
-			board[PlayerOne.rows][PlayerOne.columns] = ' ';
-			PlayerOne.columns++;
-			if (PlayerOne.columns == 3)
+			board[LoginPlayer.rows][LoginPlayer.columns] = ' ';
+			LoginPlayer.columns++;
+			if (LoginPlayer.columns == 3)
 			{
-				PlayerOne.columns = 0;
+				LoginPlayer.columns = 0;
 			}
-			board[PlayerOne.rows][PlayerOne.columns] = '*';
+			board[LoginPlayer.rows][LoginPlayer.columns] = '*';
 			break;
 
 		}

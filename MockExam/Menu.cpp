@@ -46,7 +46,7 @@ void menu()
 				{
 					break;
 				}
-				else if (answer == 'n' || answer == 'n')
+				else if (answer == 'N' || answer == 'n')
 				{
 					return;
 				}
